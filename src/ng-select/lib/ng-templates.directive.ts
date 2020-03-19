@@ -69,3 +69,8 @@ export class NgTagTemplateDirective {
 export class NgLoadingSpinnerTemplateDirective {
     constructor(public template: TemplateRef<any>) { }
 }
+
+@Directive({ selector: '[ng-placeholder-tmp]' })
+export class NgPlaceholderTemplateDirective {
+    constructor(public template: TemplateRef<any>) { }
+}

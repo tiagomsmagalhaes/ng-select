@@ -45,10 +45,12 @@ import { TemplateOptgroupExampleComponent } from './template-optgroup-example/te
 import { TemplateOptionExampleComponent } from './template-option-example/template-option-example.component';
 import { TemplateSearchExampleComponent } from './template-search-example/template-search-example.component';
 import { VirtualScrollExampleComponent } from './virtual-scroll-example/virtual-scroll-example.component';
+import { TemplatePlaceholderExampleComponent } from './template-placeholder-example/template-placeholder-example.component';
 import { SearchEditableExampleComponent } from './search-editable-example/search-editable-example.component';
 
 
-const examples = [DataSourceBackendExampleComponent,
+const examples = [
+    DataSourceBackendExampleComponent,
     DataSourceArrayExampleComponent,
     DataSourceOptionsExampleComponent,
     FormsWithOptionsExampleComponent,
@@ -70,6 +72,7 @@ const examples = [DataSourceBackendExampleComponent,
     TemplateOptionExampleComponent,
     TemplateOptgroupExampleComponent,
     TemplateHeaderFooterExampleComponent,
+    TemplatePlaceholderExampleComponent,
     TemplateDisplayExampleComponent,
     TemplateSearchExampleComponent,
     TemplateLoadingExampleComponent,

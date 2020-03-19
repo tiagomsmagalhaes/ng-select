@@ -1750,6 +1750,27 @@ describe('NgSelectComponent', () => {
             expect(el.nativeElement).not.toBeNull();
         }));
 
+        it('should display custom placeholder template', fakeAsync(() => {
+            const fixture = createTestingModule(
+                NgSelectTestCmp,
+                `<ng-select [items]="citiesWithPopulation" [(ngModel)]="selectedCity">
+                    <ng-template ng-placeholder-tmp>
+                        <div class="custom-placeholder">
+                            <p>Name</p>
+                            <p>Population</p>
+                        </div>
+                    </ng-template>
+                </ng-select>`);
+
+            fixture.componentInstance.selectedCity = fixture.componentInstance.citiesWithPopulation[0];
+            tickAndDetectChanges(fixture);
+            tickAndDetectChanges(fixture);
+
+            const el = fixture.debugElement.query(By.css('.custom-placeholder'));
+            expect(el).not.toBeNull();
+            expect(el.nativeElement).not.toBeNull();
+        }));
+
         it('should clear item using value', fakeAsync(() => {
             const fixture = createTestingModule(
                 NgSelectTestCmp,
@@ -3915,6 +3936,11 @@ class NgSelectTestCmp {
         { id: 1, name: 'Vilnius' },
         { id: 2, name: 'Kaunas' },
         { id: 3, name: 'Pabrade' },
+    ];
+    citiesWithPopulation: any[] = [
+        { id: 1, name: 'Vilnius', population: 580020 },
+        { id: 2, name: 'Kaunas', population: 328763 },
+        { id: 3, name: 'Pabrade', population: 5994 },
     ];
     citiesNames = this.cities.map(x => x.name);
 

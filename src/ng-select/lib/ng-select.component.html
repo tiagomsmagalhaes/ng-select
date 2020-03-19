@@ -5,7 +5,11 @@
     class="ng-select-container">
 
     <div class="ng-value-container">
-        <div class="ng-placeholder">{{placeholder}}</div>
+        <ng-template #defaultPlaceholderTemplate>
+            <div class="ng-placeholder">{{placeholder}}</div>
+        </ng-template>
+
+        <ng-template [ngTemplateOutlet]="placeholderTemplate || defaultPlaceholderTemplate"></ng-template>
 
         <ng-container *ngIf="!multiLabelTemplate && selectedItems.length > 0">
             <div [class.ng-value-disabled]="item.disabled" class="ng-value" *ngFor="let item of selectedItems; trackBy: trackByOption">
